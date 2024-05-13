@@ -1,4 +1,4 @@
-// lib/widgets/apunte_card.dart
+// lib\widgets\apunte_card.dart
 import 'package:flutter/material.dart';
 import '../modelos/apunte.dart';
 

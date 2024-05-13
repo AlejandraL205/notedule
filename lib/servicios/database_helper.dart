@@ -1,3 +1,5 @@
+//lib\servicios\database_helper.dart
+
 import 'package:notedule/modelos/materia_modelo.dart';
 import 'package:notedule/modelos/apunte.dart';
 import 'package:sqflite/sqflite.dart';
@@ -15,12 +17,12 @@ class DatabaseHelper {
           await db.execute(
               "CREATE TABLE Materia(id INTEGER PRIMARY KEY, nombre TEXT NOT NULL, color TEXT NOT NULL, dia TEXT NOT NULL, inicio TEXT NOT NULL, fin TEXT NOT NULL);"
           );
-          /*await db.execute(
+          await db.execute(
               "CREATE TABLE Apuntes(id INTEGER PRIMARY KEY, materia TEXT NOT NULL, titulo TEXT NOT NULL, fecha DATE NOT NULL, contenido TEXT NOT NULL, isSelected TEXT NOT NULL);",
           );
           await db.execute(
               "CREATE TABLE Tareas(id INTEGER PRIMARY KEY, materia TEXT NOT NULL, titulo TEXT NOT NULL, fecha DATE NOT NULL, contenido TEXT NOT NULL, check TEXT NOT NULL);",
-          );*/
+          );
         },
         version: _version,
     );
@@ -95,7 +97,7 @@ class DatabaseHelper {
 
     return defaultMaterias;
   }
-  /*
+  
   //---------------------Metodos para apuntes-------------------------
   static Future<int> addApunte(Apunte apunte) async {
     final db = await _getDB();
@@ -128,7 +130,7 @@ class DatabaseHelper {
       whereArgs: [materia],
     );
   }
-  
+  /*
   //----------------------Metodos para tareas--------------------------
   static Future<int> addTarea(Tarea tarea) async {
     final db = await _getDB();

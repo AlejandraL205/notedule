@@ -1,11 +1,17 @@
 // lib/widgets/boton_eliminar.dart
+
 import 'package:flutter/material.dart';
 import '../modelos/apunte.dart';
 import '../screens/eliminar_apuntes_screen.dart';
 
 class BotonEliminar extends StatelessWidget {
   final List<Apunte> apuntes;
-  BotonEliminar({required this.apuntes});
+  final String materiaActual;
+
+  BotonEliminar({
+    required this.apuntes,
+    required this.materiaActual,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,10 @@ class BotonEliminar extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => EliminarApuntesScreen(apuntes: apuntes),
+            builder: (context) => EliminarApuntesScreen(
+              apuntes: apuntes,
+              materiaActual: materiaActual,
+            ),
           ),
         );
       },

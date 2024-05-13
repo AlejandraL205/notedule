@@ -40,6 +40,16 @@ class NotasList extends StatelessWidget {
                 },
                 isSelected: apunte.isSelected,
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
+                  'Materia: ${apunte.materia}',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
               Divider( // Separador entre apuntes
                 color: Colors.grey.withOpacity(0.5),
                 thickness: 1, 
